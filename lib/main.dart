@@ -26,8 +26,15 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
+  late TabController _controller;
   int _counter = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = TabController(length: 2, vsync: this, initialIndex: 0);
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -42,7 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: [
           IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
+          IconButton(icon: Icon(Icons.more_vert_sharp), onPressed: (){},),
         ],
+        bottom: TabBar(),
       ),
       body: Center(
         child: Column(
