@@ -40,6 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
+        ],
       ),
       body: Center(
         child: Column(
