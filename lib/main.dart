@@ -51,22 +51,14 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
           IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
           IconButton(icon: Icon(Icons.more_vert_sharp), onPressed: (){},),
         ],
-        bottom: TabBar(),
+        bottom: TabBar(controller: _controller,
+        tabs: [
+          Tab(text: 'Chats',),
+          Tab(text: 'Calls')
+        ],),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
+      body: TabBarView(controller: _controller,
+      children: [],),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
