@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(title: 'Chat Application'),
     );
   }
@@ -58,7 +59,10 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         ],),
       ),
       body: TabBarView(controller: _controller,
-      children: [],),
+      children: [
+        Center(child: Text('Chats'),),
+        Center(child: Text('Calls'),),
+      ],),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
