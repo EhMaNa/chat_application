@@ -29,7 +29,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
   late TabController _controller;
-  int _counter = 0;
   @override
   void initState() {
     // TODO: implement initState
@@ -37,11 +36,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     _controller = TabController(length: 2, vsync: this, initialIndex: 0);
   }
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         Center(child: Text('Calls'),),
       ],),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {},
         tooltip: 'Increment',
         child: Icon(Icons.message_sharp),
       ),
