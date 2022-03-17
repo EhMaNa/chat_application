@@ -14,14 +14,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: 'Chat Application'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -41,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('CHaT'),
         actions: [
           IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
           IconButton(icon: Icon(Icons.more_vert_sharp), onPressed: (){},),
