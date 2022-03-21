@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'chatlist_screen.dart';
+import 'screens/chatlist_screen.dart';
 
 void main() {
   runApp(MyApp());
