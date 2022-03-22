@@ -11,7 +11,6 @@ class _ChatListState extends State<ChatList> with SingleTickerProviderStateMixin
   late TabController _controller;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller = TabController(length: 2, vsync: this, initialIndex: 0);
   }
@@ -25,6 +24,11 @@ class _ChatListState extends State<ChatList> with SingleTickerProviderStateMixin
         actions: [
           IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
           IconButton(icon: Icon(Icons.more_vert_sharp), onPressed: (){},),
+          PopupMenuButton(itemBuilder: (BuildContext) {
+            return [
+              PopupMenuItem(child: child)
+            ]
+          })
         ],
         bottom: TabBar(controller: _controller,
           tabs: [
