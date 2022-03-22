@@ -26,8 +26,10 @@ class _ChatListState extends State<ChatList> with SingleTickerProviderStateMixin
           IconButton(icon: Icon(Icons.more_vert_sharp), onPressed: (){},),
           PopupMenuButton(itemBuilder: (BuildContext) {
             return [
-              PopupMenuItem(child: child)
-            ]
+              PopupMenuItem(child: Text('New group'), value: 'New group',),
+              PopupMenuItem(child: Text('Broadcast'), value: 'Broadcast',),
+              PopupMenuItem(child: Text('Settings'), value: 'Settings',)
+            ];
           })
         ],
         bottom: TabBar(controller: _controller,
