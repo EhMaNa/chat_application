@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Chat Application',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: "OpenSans"
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
