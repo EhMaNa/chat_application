@@ -14,6 +14,7 @@ class _ChatListState extends State<ChatList> {
     return Scaffold(
       body: ListView(
         children: [
+          MyCard(),
           MyCard()
         ],
       ),
