@@ -23,7 +23,6 @@ class _ChatListState extends State<ChatList> with SingleTickerProviderStateMixin
         title: Text('CHaT'),
         actions: [
           IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
-          IconButton(icon: Icon(Icons.more_vert_sharp), onPressed: (){},),
           PopupMenuButton(
               onSelected: (value){},
               itemBuilder: (buildContext) {
