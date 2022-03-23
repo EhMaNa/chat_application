@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Card extends StatefulWidget {
-  const Card({Key? key}) : super(key: key);
+class MyCard extends StatefulWidget {
+  const MyCard({Key? key}) : super(key: key);
 
   @override
-  _CardState createState() => _CardState();
+  _MyCardState createState() => _MyCardState();
 }
 
-class _CardState extends State<Card> {
+class _MyCardState extends State<MyCard> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListTile();
   }
 }
