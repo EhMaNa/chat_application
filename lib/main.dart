@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/chatlist_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => ChatList(),
+        '/': (context) => Home(),
       },
     );
   }

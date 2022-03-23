@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ChatList extends StatefulWidget {
+class Home extends StatefulWidget {
 
 
   @override
-  _ChatListState createState() => _ChatListState();
+  _HomeState createState() => _HomeState();
 }
 
-class _ChatListState extends State<ChatList> with SingleTickerProviderStateMixin{
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
   late TabController _controller;
   @override
   void initState() {
