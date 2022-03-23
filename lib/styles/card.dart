@@ -12,16 +12,21 @@ class _MyCardState extends State<MyCard> {
   Widget build(BuildContext context) {
     return ListTile(
       leading: CircleAvatar(
-        radius: 25,
+        radius: 30,
       ),
       title: Text('Checking', style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 16,
       ),),
-      subtitle: Text('fa wo gyimie ko', style: TextStyle(
-        fontSize: 13,
-        fontWeight: ,
-      ),),
+      subtitle: Row(
+        children: [
+          Icon(Icons.done_all),
+          Text('fa wo gyimie ko', style: TextStyle(
+            fontSize: 13,
+          ),),
+          SizedBox(width: 3,)
+        ],
+      ),
       trailing: Text('20:48'),
     );
   }
