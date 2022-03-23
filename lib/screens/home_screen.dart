@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:folder/screens/chatList.dart';
+
 
 class Home extends StatefulWidget {
 
@@ -41,7 +43,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
       ),
       body: TabBarView(controller: _controller,
         children: [
-          Center(child: Text('Chats'),),
+          ChatList(),
           Center(child: Text('Calls'),),
         ],),
       floatingActionButton: FloatingActionButton(
