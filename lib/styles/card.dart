@@ -16,12 +16,12 @@ class _MyCardState extends State<MyCard> {
         ListTile(
           leading: CircleAvatar(
             radius: 30,
-            child: SvgPicture.asset('assets/svg/person_black_36dp.svg',
+            child: SvgPicture.asset('svg/person_black_36dp.svg',
                 color: Colors.white,
               height: 30,
               width: 30,
             ),
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.blueGrey,
           ),
           title: Text('Checking', style: TextStyle(
             fontWeight: FontWeight.bold,
