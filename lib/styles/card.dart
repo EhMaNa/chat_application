@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MyCard extends StatefulWidget {
   const MyCard({Key? key}) : super(key: key);
@@ -15,6 +16,12 @@ class _MyCardState extends State<MyCard> {
         ListTile(
           leading: CircleAvatar(
             radius: 30,
+            child: SvgPicture.asset('assets/svg/person_black_36dp.svg',
+                color: Colors.white,
+              height: 30,
+              width: 30,
+            ),
+            backgroundColor: Colors.white,
           ),
           title: Text('Checking', style: TextStyle(
             fontWeight: FontWeight.bold,
