@@ -8,6 +8,8 @@ class ChatList extends StatefulWidget {
   _ChatListState createState() => _ChatListState();
 }
 
+//This Screen Shows the List of Chats
+
 class _ChatListState extends State<ChatList> {
   @override
   Widget build(BuildContext context) {
