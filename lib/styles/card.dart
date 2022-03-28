@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:folder/models/chat.dart';
 
+
 class MyCard extends StatefulWidget {
-  const MyCard(this.ChatModel);
-  final ChatModel;
+  final ChatModel chatModel;
+  const MyCard(this.chatModel);
 
   @override
   _MyCardState createState() => _MyCardState();
@@ -29,14 +30,14 @@ class _MyCardState extends State<MyCard> {
               ),
               backgroundColor: Colors.blueGrey,
             ),
-            title: Text('Checking', style: TextStyle(
+            title: Text(widget.chatModel.name, style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),),
             subtitle: Row(
               children: [
                 Icon(Icons.done_all),
-                Text('fa wo gyimie ko', style: TextStyle(
+                Text(widget.chatModel.message, style: TextStyle(
                   fontSize: 13,
                 ),),
                 SizedBox(width: 3,)
