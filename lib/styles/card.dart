@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:folder/models/chat.dart';
 
 class MyCard extends StatefulWidget {
-  const MyCard({Key? key}) : super(key: key);
+  const MyCard(this.ChatModel);
+  final ChatModel;
 
   @override
   _MyCardState createState() => _MyCardState();
