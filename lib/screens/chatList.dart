@@ -14,18 +14,15 @@ class ChatList extends StatefulWidget {
 class _ChatListState extends State<ChatList> {
   List<ChatModel> chats = [
     ChatModel(name: "Tron",time: '12:30', icon: 'person.svg', message: "Arivadache"),
-  ChatModel(name: "Psam",time: '12:30', icon: 'person.svg', message: "Hola");
-  ]
+  ChatModel(name: "Psam",time: '12:30', icon: 'person.svg', message: "Hola"),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
         itemCount: chats.length,
-        itemBuilder: (context, index) => MyCard()
-
-        },
-
-      ),
+        itemBuilder: (context, index) => MyCard(chats[index])
+      )
     );
   }
 }
