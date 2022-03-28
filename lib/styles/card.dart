@@ -23,7 +23,7 @@ class _MyCardState extends State<MyCard> {
           ListTile(
             leading: CircleAvatar(
               radius: 30,
-              child: SvgPicture.asset('svg/person_black_36dp.svg',
+              child: SvgPicture.asset(widget.chatModel.inGroup ? 'svg/person_black_36dp.svg' : 'svg/person_black_36dp.svg',
                   color: Colors.white,
                 height: 30,
                 width: 30,
@@ -37,13 +37,14 @@ class _MyCardState extends State<MyCard> {
             subtitle: Row(
               children: [
                 Icon(Icons.done_all),
+                SizedBox(width: 2,),
                 Text(widget.chatModel.message, style: TextStyle(
                   fontSize: 13,
                 ),),
                 SizedBox(width: 3,)
               ],
             ),
-            trailing: Text('20:48'),
+            trailing: Text(widget.chatModel.time),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 20, left: 80),

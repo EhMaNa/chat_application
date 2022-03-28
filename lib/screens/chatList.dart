@@ -13,8 +13,8 @@ class ChatList extends StatefulWidget {
 
 class _ChatListState extends State<ChatList> {
   List<ChatModel> chats = [
-    ChatModel(name: "Tron",time: '12:30', icon: 'person.svg', message: "Arivadache"),
-  ChatModel(name: "Psam",time: '12:30', icon: 'person.svg', message: "Hola"),
+    ChatModel(name: "Tron",time: '12:30 AM', icon: 'person.svg', message: "Arivadache", inGroup: false),
+  ChatModel(name: "Psam",time: '1:39 PM', icon: 'person.svg', message: "Hola", inGroup: false),
   ];
   @override
   Widget build(BuildContext context) {
