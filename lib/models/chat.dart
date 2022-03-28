@@ -1,8 +1,8 @@
 
 class ChatModel {
-  String? name;
-  String? time;
+  String name;
+  String time;
   String? icon;
-  String? message;
-  ChatModel({this.name, this.icon, this.time, this.message});
+  String message;
+  ChatModel({required this.name, this.icon, required this.time, required this.message});
 }
