@@ -23,7 +23,7 @@ class _MyCardState extends State<MyCard> {
           ListTile(
             leading: CircleAvatar(
               radius: 30,
-              child: SvgPicture.asset(widget.chatModel.inGroup ? 'svg/person_black_36dp.svg' : 'svg/person_black_36dp.svg',
+              child: SvgPicture.asset(widget.chatModel.inGroup ? 'svg/person_black_36dp.svg' : 'svg/group_black_36dp.svg',
                   color: Colors.white,
                 height: 30,
                 width: 30,
