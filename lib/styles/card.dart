@@ -16,7 +16,7 @@ class _MyCardState extends State<MyCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        print('I was tapped');
+        Navigator.pushNamed(context, '/chat');
       },
       child: Column(
         children: [
@@ -24,7 +24,7 @@ class _MyCardState extends State<MyCard> {
             leading: CircleAvatar(
               radius: 30,
               child: SvgPicture.asset(widget.chatModel.inGroup ? 'svg/person_black_36dp.svg' : 'svg/group_black_36dp.svg',
-                  color: Colors.white,
+                color: Colors.white,
                 height: 30,
                 width: 30,
               ),
