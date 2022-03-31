@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:folder/models/chat.dart';
+import 'package:folder/models/chatModel.dart';
 
 
 class MyCard extends StatefulWidget {
