@@ -28,6 +28,21 @@ class _ChatPageState extends State<ChatPage> {
                 width: 30,
               )
             ),
+            SizedBox(width: 10,),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(widget.chatModel.name, style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.5,
+                ),),
+                Text("Online",style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w100,
+                ),)
+              ],
+            )
           ],
         ),
       ),
