@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folder/screens/chatPage.dart';
 import 'screens/home_screen.dart';
+import 'package:folder/models/chatModel.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,6 +9,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of the application.
+  //late final ChatModel chatModel;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
-        '/chat' : (context) => ChatPage()
+        '/chat' : (context) => ChatPage(/*chatModel*/)
       },
     );
   }
