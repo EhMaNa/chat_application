@@ -45,6 +45,18 @@ class _ChatPageState extends State<ChatPage> {
             )
           ],
         ),
+        actions: [
+          IconButton(icon: Icon(Icons.call), onPressed: (){},),
+          PopupMenuButton(
+              onSelected: (value){},
+              itemBuilder: (buildContext) {
+                return [
+                  PopupMenuItem(child: Text('New group'), value: 'New group',),
+                  PopupMenuItem(child: Text('Broadcast'), value: 'Broadcast',),
+                  PopupMenuItem(child: Text('Settings'), value: 'Settings',)
+                ];
+              })
+        ],
       ),
     );
   }
