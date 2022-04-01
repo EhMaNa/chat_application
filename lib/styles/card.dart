@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:folder/models/chatModel.dart';
+import 'package:folder/screens/chatPage.dart';
 
 
 class MyCard extends StatefulWidget {
@@ -16,7 +17,7 @@ class _MyCardState extends State<MyCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Navigator.pushNamed(context, '/chat');
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage(widget.chatModel)));
       },
       child: Column(
         children: [
