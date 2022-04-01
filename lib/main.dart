@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folder/screens/chatPage.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -12,13 +13,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CHaT',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: "OpenSans"
+          primarySwatch: Colors.blue,
+          fontFamily: "OpenSans"
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
+        '/chat' : (context) => ChatPage()
       },
     );
   }
