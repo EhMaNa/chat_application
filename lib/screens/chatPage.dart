@@ -93,6 +93,7 @@ class _ChatPageState extends State<ChatPage> {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     child: Card(
+                      margin: EdgeInsets.only(left:2, right: 2, bottom: 2),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50) ),
                         child: TextFormField()),
