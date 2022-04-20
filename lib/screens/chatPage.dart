@@ -82,6 +82,7 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
       )
     );
   }
