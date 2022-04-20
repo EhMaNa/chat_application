@@ -86,10 +86,13 @@ class _ChatPageState extends State<ChatPage> {
         child: Stack(
           children: [
             ListView(),
-            Row(
-              children: [
-                TextFormField(),
-              ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                children: [
+                  TextFormField(),
+                ],
+              ),
             )
           ],
         )
