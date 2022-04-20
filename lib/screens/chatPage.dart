@@ -90,7 +90,10 @@ class _ChatPageState extends State<ChatPage> {
               alignment: Alignment.bottomCenter,
               child: Row(
                 children: [
-                  TextFormField(),
+                  Container(
+                    child: Card(
+                        child: TextFormField()),
+                  ),
                 ],
               ),
             )
