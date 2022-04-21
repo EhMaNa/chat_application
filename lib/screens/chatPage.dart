@@ -97,6 +97,7 @@ class _ChatPageState extends State<ChatPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50) ),
                         child: TextFormField(
+                          minLines: 1,
                           textAlignVertical: TextAlignVertical.center,
                           keyboardType: TextInputType.multiline,
                           decoration: InputDecoration(
