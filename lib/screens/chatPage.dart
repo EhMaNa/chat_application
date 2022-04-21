@@ -98,6 +98,10 @@ class _ChatPageState extends State<ChatPage> {
                           borderRadius: BorderRadius.circular(50) ),
                         child: TextFormField(
                           decoration: InputDecoration(
+                            prefixIcon: IconButton(
+                              onPressed: (){},
+                                icon: Icon(Icons.emoji_emotions)),
+                            contentPadding: EdgeInsets.all(5),
                             hintText: 'Type your message here'
                           ),
                         )),
