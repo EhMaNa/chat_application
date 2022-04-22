@@ -15,6 +15,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.yellow,
       appBar: AppBar(
         leadingWidth: 70,
         title: Row(
@@ -97,6 +98,7 @@ class _ChatPageState extends State<ChatPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50) ),
                         child: TextFormField(
+                          maxLines: 5,
                           minLines: 1,
                           textAlignVertical: TextAlignVertical.center,
                           keyboardType: TextInputType.multiline,
