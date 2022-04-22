@@ -106,7 +106,15 @@ class _ChatPageState extends State<ChatPage> {
                             prefixIcon: IconButton(
                               onPressed: (){},
                                 icon: Icon(Icons.emoji_emotions_outlined)),
-                            suffixIcon: Icon(Icons.send_sharp),
+                            suffixIcon: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.attach_file_outlined),
+                                SizedBox(width: 10,),
+                                Icon(Icons.settings_voice_outlined),
+                                SizedBox(width: 15,),
+                              ],
+                            ),
                             contentPadding: EdgeInsets.all(5),
                             hintText: 'Type your message here'
                           ),
