@@ -96,7 +96,7 @@ class _ChatPageState extends State<ChatPage> {
                     child: Card(
                       margin: EdgeInsets.only(left:2, right: 2, bottom: 2),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50) ),
+                          borderRadius: BorderRadius.circular(20) ),
                         child: TextFormField(
                           maxLines: 5,
                           minLines: 1,
@@ -106,6 +106,7 @@ class _ChatPageState extends State<ChatPage> {
                             prefixIcon: IconButton(
                               onPressed: (){},
                                 icon: Icon(Icons.emoji_emotions_outlined)),
+                            suffixIcon: Icon(Icons.send_sharp),
                             contentPadding: EdgeInsets.all(5),
                             hintText: 'Type your message here'
                           ),
