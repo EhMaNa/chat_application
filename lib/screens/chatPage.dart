@@ -111,7 +111,9 @@ class _ChatPageState extends State<ChatPage> {
                               children: [
                                 Icon(Icons.attach_file_outlined),
                                 SizedBox(width: 10,),
-                                Icon(Icons.settings_voice_outlined),
+                                IconButton(
+                                  onPressed: (){},
+                                    icon: Icon(Icons.settings_voice_outlined)),
                                 SizedBox(width: 15,),
                               ],
                             ),
