@@ -1,6 +1,9 @@
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:folder/models/chatModel.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+
 // Individual Chat Page
 class ChatPage extends StatefulWidget {
   const ChatPage(this.chatModel);
@@ -130,4 +133,13 @@ class _ChatPageState extends State<ChatPage> {
       )
     );
   }
+}
+
+Widget emojiSelector (){
+  return EmojiPicker(
+      onEmojiSelected: (emoji, category){
+    print('I am working');
+  }
+
+  );
 }
