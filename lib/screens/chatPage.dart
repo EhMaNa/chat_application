@@ -16,6 +16,14 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   bool showEmoji = false;
+  FocusNode focus = FocusNode();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,6 +113,7 @@ class _ChatPageState extends State<ChatPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20) ),
                             child: TextFormField(
+                              focusNode: focus,
                               maxLines: 5,
                               minLines: 1,
                               textAlignVertical: TextAlignVertical.center,
@@ -112,6 +121,8 @@ class _ChatPageState extends State<ChatPage> {
                               decoration: InputDecoration(
                                 prefixIcon: IconButton(
                                   onPressed: (){
+                                    focus.unfocus();
+                                    focus.canRequestFocus = false;
                                     setState(() {
                                       showEmoji = !showEmoji;
                                     });
