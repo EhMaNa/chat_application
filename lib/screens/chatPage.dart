@@ -138,8 +138,11 @@ class _ChatPageState extends State<ChatPage> {
 Widget emojiSelector (){
   return EmojiPicker(
       onEmojiSelected: (emoji, category){
-    print('I am working');
-  }
-
+    print(emoji);
+  },
+  config: Config(
+    columns: 7,
+    
+  ),
   );
 }
