@@ -22,6 +22,13 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    focus.addListener(() {
+      if (focus.hasFocus) {
+        setState(() {
+          showEmoji = false;
+        });
+      }
+    })
   }
 
   @override
