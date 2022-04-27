@@ -17,6 +17,7 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   bool showEmoji = false;
   FocusNode focus = FocusNode();
+  //TextEditingController _controller = TextEditingController()
 
   @override
   void initState() {
