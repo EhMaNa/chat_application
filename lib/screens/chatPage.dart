@@ -17,7 +17,7 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   bool showEmoji = false;
   FocusNode focus = FocusNode();
-  TextEditingController _controller = TextEditingController()
+  TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
@@ -30,6 +30,20 @@ class _ChatPageState extends State<ChatPage> {
         });
       }
     });
+  }
+
+  Widget emojiSelector (){
+    return EmojiPicker(
+      onEmojiSelected: (category, emoji){
+        print(emoji);
+        setState(() {
+          _controller.text = _controller.text + emoji.emoji;
+        });
+      },
+      config: Config(
+        columns: 7,
+      ),
+    );
   }
 
   @override
@@ -132,6 +146,7 @@ class _ChatPageState extends State<ChatPage> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20) ),
                               child: TextFormField(
+                                controller: _controller,
                                 focusNode: focus,
                                 maxLines: 5,
                                 minLines: 1,
@@ -177,13 +192,3 @@ class _ChatPageState extends State<ChatPage> {
   }
 }
 
-Widget emojiSelector (){
-  return EmojiPicker(
-      onEmojiSelected: (emoji, category){
-    print(emoji);
-  },
-  config: Config(
-    columns: 7,
-  ),
-  );
-}
