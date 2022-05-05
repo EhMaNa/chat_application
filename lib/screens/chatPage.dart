@@ -59,11 +59,28 @@ class _ChatPageState extends State<ChatPage> {
       child: Column(
         children: [
           Row(
-            children: [],
+            children: [
+              attachFileIcons()
+            ],
           )
         ],
       ),
       );
+  }
+
+  Widget attachFileIcons () {
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 30,
+          child: IconButton(
+            onPressed: (){},
+              icon: Icon(Icons.insert_drive_file,
+          size: 29,),)
+        ),
+        Text('File'),
+      ],
+    );
   }
 
   @override
