@@ -48,18 +48,22 @@ class _ChatPageState extends State<ChatPage> {
 
   Widget buildBottomSheet (BuildContext context) {
     return Container(
-      color: Colors.transparent,
-      child: Container(
+      height: 200,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
+            topLeft: Radius.circular(25),
+            topRight: Radius.circular(25),
           )
-
         ),
+      child: Column(
+        children: [
+          Row(
+            children: [],
+          )
+        ],
       ),
-    );
+      );
   }
 
   @override
