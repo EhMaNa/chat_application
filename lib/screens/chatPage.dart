@@ -32,9 +32,9 @@ class _ChatPageState extends State<ChatPage> {
     });
   }
 
-  Widget emojiSelector (){
+  Widget emojiSelector() {
     return EmojiPicker(
-      onEmojiSelected: (category, emoji){
+      onEmojiSelected: (category, emoji) {
         print(emoji);
         setState(() {
           _controller.text = _controller.text + emoji.emoji;
@@ -46,10 +46,26 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
+  Widget buildBottomSheet (BuildContext context) {
+    return Container(
+      color: Colors.transparent,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          )
+
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: (){
+      onWillPop: () {
         if (showEmoji) {
           setState(() {
             showEmoji = false;
@@ -60,133 +76,145 @@ class _ChatPageState extends State<ChatPage> {
         return Future.value(false);
       },
       child: Scaffold(
-        backgroundColor: Colors.yellow,
-        appBar: AppBar(
-          leadingWidth: 70,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: 5,
+          backgroundColor: Colors.yellow,
+          appBar: AppBar(
+            leadingWidth: 70,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 5,
+                ),
+                CircleAvatar(
+                    radius: 20,
+                    child: SvgPicture.asset(
+                      widget.chatModel.inGroup
+                          ? 'svg/person_black_36dp.svg'
+                          : 'svg/group_black_36dp.svg',
+                      color: Colors.white,
+                      height: 30,
+                      width: 30,
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.chatModel.name,
+                      style: TextStyle(),
+                    ),
+                    Text(
+                      "online",
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w100,
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+            actions: [
+              IconButton(
+                icon: Icon(Icons.call),
+                onPressed: () {},
               ),
-              CircleAvatar(
-                  radius: 20,
-                  child: SvgPicture.asset(
-                    widget.chatModel.inGroup
-                        ? 'svg/person_black_36dp.svg'
-                        : 'svg/group_black_36dp.svg',
-                    color: Colors.white,
-                    height: 30,
-                    width: 30,
-                  )),
-              SizedBox(
-                width: 10,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              PopupMenuButton(
+                  onSelected: (value) {},
+                  itemBuilder: (buildContext) {
+                    return [
+                      PopupMenuItem(
+                        child: Text('New group'),
+                        value: 'New group',
+                      ),
+                      PopupMenuItem(
+                        child: Text('Broadcast'),
+                        value: 'Broadcast',
+                      ),
+                      PopupMenuItem(
+                        child: Text('Settings'),
+                        value: 'Settings',
+                      )
+                    ];
+                  })
+            ],
+          ),
+          body: Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Stack(
                 children: [
-                  Text(
-                    widget.chatModel.name,
-                    style: TextStyle(),
-                  ),
-                  Text(
-                    "online",
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w100,
+                  ListView(),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Card(
+                                  margin: EdgeInsets.only(
+                                      left: 2, right: 2, bottom: 2),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: TextFormField(
+                                    controller: _controller,
+                                    focusNode: focus,
+                                    maxLines: 5,
+                                    minLines: 1,
+                                    textAlignVertical: TextAlignVertical.center,
+                                    keyboardType: TextInputType.multiline,
+                                    decoration: InputDecoration(
+                                        prefixIcon: IconButton(
+                                            onPressed: () {
+                                              focus.unfocus();
+                                              focus.canRequestFocus = false;
+                                              setState(() {
+                                                showEmoji = !showEmoji;
+                                              });
+                                            },
+                                            icon: Icon(
+                                                Icons.emoji_emotions_outlined)),
+                                        suffixIcon: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            IconButton(
+                                                onPressed: () {
+                                                  showModalBottomSheet(
+                                                    backgroundColor: Colors.transparent,
+                                                      context: context,
+                                                      builder: buildBottomSheet);
+                                                },
+                                                icon: Icon(
+                                                    Icons.attach_file_outlined)
+                                            ),
+                                            SizedBox(width: 10,),
+                                            IconButton(
+                                                onPressed: () {},
+                                                icon: Icon(Icons
+                                                    .settings_voice_outlined)),
+                                            SizedBox(width: 15,),
+                                          ],
+                                        ),
+                                        contentPadding: EdgeInsets.all(5),
+                                        hintText: 'Type your message here'
+                                    ),
+                                  )),
+                            ),
+                          ],
+                        ),
+                        showEmoji ? emojiSelector() : Container(),
+                      ],
                     ),
                   )
                 ],
               )
-            ],
-          ),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.call),
-              onPressed: () {},
-            ),
-            PopupMenuButton(
-                onSelected: (value) {},
-                itemBuilder: (buildContext) {
-                  return [
-                    PopupMenuItem(
-                      child: Text('New group'),
-                      value: 'New group',
-                    ),
-                    PopupMenuItem(
-                      child: Text('Broadcast'),
-                      value: 'Broadcast',
-                    ),
-                    PopupMenuItem(
-                      child: Text('Settings'),
-                      value: 'Settings',
-                    )
-                  ];
-                })
-          ],
-        ),
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Stack(
-            children: [
-              ListView(),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          child: Card(
-                            margin: EdgeInsets.only(left:2, right: 2, bottom: 2),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20) ),
-                              child: TextFormField(
-                                controller: _controller,
-                                focusNode: focus,
-                                maxLines: 5,
-                                minLines: 1,
-                                textAlignVertical: TextAlignVertical.center,
-                                keyboardType: TextInputType.multiline,
-                                decoration: InputDecoration(
-                                  prefixIcon: IconButton(
-                                    onPressed: (){
-                                      focus.unfocus();
-                                      focus.canRequestFocus = false;
-                                      setState(() {
-                                        showEmoji = !showEmoji;
-                                      });
-                                    },
-                                      icon: Icon(Icons.emoji_emotions_outlined)),
-                                  suffixIcon: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(Icons.attach_file_outlined),
-                                      SizedBox(width: 10,),
-                                      IconButton(
-                                        onPressed: (){},
-                                          icon: Icon(Icons.settings_voice_outlined)),
-                                      SizedBox(width: 15,),
-                                    ],
-                                  ),
-                                  contentPadding: EdgeInsets.all(5),
-                                  hintText: 'Type your message here'
-                                ),
-                              )),
-                        ),
-                      ],
-                    ),
-                         showEmoji ? emojiSelector() : Container(),
-                  ],
-                ),
-              )
-            ],
           )
-        )
       ),
     );
   }
