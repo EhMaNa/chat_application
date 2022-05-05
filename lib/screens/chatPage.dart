@@ -48,7 +48,7 @@ class _ChatPageState extends State<ChatPage> {
 
   Widget buildBottomSheet (BuildContext context) {
     return Container(
-      height: 200,
+      height: 270,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -62,7 +62,11 @@ class _ChatPageState extends State<ChatPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File")
+              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+              SizedBox(width: 30,),
+              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+              SizedBox(width: 30,),
+              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
             ],
           )
         ],
@@ -79,7 +83,7 @@ class _ChatPageState extends State<ChatPage> {
           child: IconButton(
             onPressed: (){},
               icon: Icon(icon,
-                size: 39,
+                size: 29,
                 color: Colors.white,
               ),
           )
