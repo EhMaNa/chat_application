@@ -57,10 +57,12 @@ class _ChatPageState extends State<ChatPage> {
           )
         ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              attachFileIcons()
+              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File")
             ],
           )
         ],
@@ -68,17 +70,21 @@ class _ChatPageState extends State<ChatPage> {
       );
   }
 
-  Widget attachFileIcons () {
+  Widget attachFileIcons (IconData icon, Color color, String name) {
     return Column(
       children: [
         CircleAvatar(
+          backgroundColor: color,
           radius: 30,
           child: IconButton(
             onPressed: (){},
-              icon: Icon(Icons.insert_drive_file,
-          size: 29,),)
+              icon: Icon(icon,
+                size: 39,
+                color: Colors.white,
+              ),
+          )
         ),
-        Text('File'),
+        Text(name),
       ],
     );
   }
