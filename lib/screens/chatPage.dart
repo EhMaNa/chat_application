@@ -74,9 +74,9 @@ class _ChatPageState extends State<ChatPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+                attachFileIcons(Icons.headphones, Colors.blueAccent, "Audio"),
                 SizedBox(width: 40,),
-                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+                attachFileIcons(Icons.person, Colors.blueAccent, "Contact"),
               ],
             ),
           ],
