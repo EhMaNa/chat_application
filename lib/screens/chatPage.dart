@@ -56,30 +56,32 @@ class _ChatPageState extends State<ChatPage> {
             topRight: Radius.circular(25),
           )
         ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
-              SizedBox(width: 30,),
-              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
-              SizedBox(width: 30,),
-              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
-              SizedBox(width: 30,),
-              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
-              SizedBox(width: 30,),
-              attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
-            ],
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+                SizedBox(width: 40,),
+                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+                SizedBox(width: 40,),
+                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+              ],
+            ),
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+                SizedBox(width: 40,),
+                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+              ],
+            ),
+          ],
+        ),
       ),
       );
   }
