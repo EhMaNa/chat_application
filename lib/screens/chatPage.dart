@@ -57,7 +57,7 @@ class _ChatPageState extends State<ChatPage> {
           )
         ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: Column(
           children: [
             Row(
@@ -86,21 +86,22 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   Widget attachFileIcons (IconData icon, Color color, String name) {
-    return Column(
-      children: [
-        CircleAvatar(
-          backgroundColor: color,
-          radius: 30,
-          child: IconButton(
-            onPressed: (){},
-              icon: Icon(icon,
-                size: 29,
-                color: Colors.white,
-              ),
-          )
-        ),
-        Text(name),
-      ],
+    return InkWell(
+      onTap: (){},
+      child: Column(
+        children: [
+          CircleAvatar(
+            backgroundColor: color,
+            radius: 30,
+            child: Icon(
+              icon,
+              size: 29,
+              color: Colors.white,
+            ),
+          ),
+          Text(name),
+        ],
+      ),
     );
   }
 
