@@ -65,7 +65,7 @@ class _ChatPageState extends State<ChatPage> {
               children: [
                 attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
                 SizedBox(width: 40,),
-                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "Gallery"),
+                attachFileIcons(Icons.insert_photo, Colors.blueAccent, "Gallery"),
                 SizedBox(width: 40,),
                 attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "Camera"),
               ],
