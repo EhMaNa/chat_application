@@ -2,6 +2,7 @@ import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:folder/models/chatModel.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:folder/styles/functions.dart';
 
 
 // Individual Chat Page
@@ -63,9 +64,9 @@ class _ChatPageState extends State<ChatPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                attachFileIcons(Icons.insert_drive_file, Colors.blueAccent, "File"),
+                attachFileIcons(Icons.insert_drive_file, generateColor(), "File"),
                 SizedBox(width: 40,),
-                attachFileIcons(Icons.insert_photo, Colors.blueAccent, "Gallery"),
+                attachFileIcons(Icons.insert_photo, generateColor(), "Gallery"),
                 SizedBox(width: 40,),
                 attachFileIcons(Icons.camera_alt, Colors.blueAccent, "Camera"),
               ],
