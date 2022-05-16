@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 Color generateColor (){
   int random = Random().nextInt(10);
     Map colors = {
-      '1' : Colors.pink,
-      '2': Colors.blueAccent
+      '0' : Colors.pink,
+      '1': Colors.blueAccent,
+      '2': Colors.deepOrange,
+      '3': Colors.teal
     };
 
   return colors['$random'];
