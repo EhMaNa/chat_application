@@ -8,7 +8,7 @@ Color generateColor (){
       '1': Colors.blueAccent,
       '2': Colors.orange,
       '3': Colors.teal,
-      '5': Colors.purple
+      '4': Colors.purple
     };
 
   return colors['$random'];
