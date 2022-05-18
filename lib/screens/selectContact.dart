@@ -12,7 +12,17 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select Contact'),
+        title: Text('Select Contact',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20
+        ),),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search_sharp),
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
