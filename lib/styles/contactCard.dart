@@ -9,7 +9,11 @@ class ContactCard extends StatelessWidget {
     return ListTile(
       leading: CircleAvatar(
         radius: 23,
-        child: SvgPicture.asset('svg/group_black_36dp.svg'),
+        child: SvgPicture.asset('svg/group_black_36dp.svg',
+        color: Colors.white,
+        height: 30,
+        width: 30,),
+        backgroundColor: Colors.blueGrey,
       ),
     );
   }
