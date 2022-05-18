@@ -15,6 +15,7 @@ class ContactCard extends StatelessWidget {
         width: 30,),
         backgroundColor: Colors.blueGrey,
       ),
+      title: Text('New group'),
     );
   }
 }
