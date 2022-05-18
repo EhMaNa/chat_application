@@ -13,9 +13,13 @@ class ContactCard extends StatelessWidget {
         color: Colors.white,
         height: 30,
         width: 30,),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blueGrey[200],
       ),
-      title: Text('New group'),
+      title: Text('New group',
+      style: TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+      ),),
     );
   }
 }
