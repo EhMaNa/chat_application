@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folder/screens/chatList.dart';
+import 'package:folder/screens/selectContact.dart';
 
 
 class Home extends StatefulWidget {
@@ -47,7 +48,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
           Center(child: Text('Calls'),),
         ],),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ContactPage()));
+        },
         tooltip: '',
         child: Icon(Icons.message_sharp),
       ),
