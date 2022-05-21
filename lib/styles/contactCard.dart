@@ -17,7 +17,7 @@ class ContactCard extends StatelessWidget {
       ),
       title: Text('New group',
       style: TextStyle(
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: FontWeight.bold,
       ),),
     );
