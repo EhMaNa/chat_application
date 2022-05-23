@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folder/styles/contactCard.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({Key? key}) : super(key: key);
@@ -22,6 +23,11 @@ class _ContactPageState extends State<ContactPage> {
             icon: Icon(Icons.search_sharp),
             onPressed: () {},
           ),
+        ],
+      ),
+      body: ListView(
+        children: [
+          ContactCard(),
         ],
       ),
     );
