@@ -68,7 +68,7 @@ class _ChatPageState extends State<ChatPage> {
                 SizedBox(width: 40,),
                 attachFileIcons(Icons.insert_photo, generateColor(), "Gallery"),
                 SizedBox(width: 40,),
-                attachFileIcons(Icons.camera_alt, Colors.blueAccent, "Camera"),
+                attachFileIcons(Icons.camera_alt, generateColor(), "Camera"),
               ],
             ),
             SizedBox(height: 40,),
