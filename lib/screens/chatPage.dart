@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:folder/styles/functions.dart';
 
 
-// Individual Chat Page
+// Individual Chat Screen
 class ChatPage extends StatefulWidget {
   const ChatPage(this.chatModel);
 
