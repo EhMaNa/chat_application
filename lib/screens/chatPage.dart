@@ -77,7 +77,7 @@ class _ChatPageState extends State<ChatPage> {
               children: [
                 attachFileIcons(Icons.headphones, generateColor(), "Audio"),
                 SizedBox(width: 40,),
-                attachFileIcons(Icons.person, Colors.blueAccent, "Contact"),
+                attachFileIcons(Icons.person, generateColor(), "Contact"),
               ],
             ),
           ],
