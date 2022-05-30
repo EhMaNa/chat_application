@@ -18,7 +18,7 @@ class _ContactPageState extends State<ContactPage> {
         title: Text('Select Contact',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 20
+          fontSize: 15
         ),),
         actions: [
           IconButton(
