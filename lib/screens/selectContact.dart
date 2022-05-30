@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folder/styles/contactCard.dart';
 
 
-
+// Show Contacts Screen
 class ContactPage extends StatefulWidget {
   const ContactPage({Key? key}) : super(key: key);
 
