@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
-        //'/contact' : (context) => ChatPage()
+        //'/contact' : (context) => ContactPage()
       },
     );
   }
