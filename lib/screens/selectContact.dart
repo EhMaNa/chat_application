@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:folder/styles/contactCard.dart';
+import 'package:folder/customFiles/contactCard.dart';
 
 
 // Show Contacts Screen
@@ -27,11 +27,9 @@ class _ContactPageState extends State<ContactPage> {
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          ContactCard(),
-        ],
-      ),
+      body: ListView.builder(
+        itemCount: 10,
+          itemBuilder: (context, index) => ContactCard())
     );
   }
 }
