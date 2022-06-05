@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folder/models/chatModel.dart';
-import 'package:folder/styles/card.dart';
+import 'package:folder/customFiles/card.dart';
 
 
 //This Screen Shows the List of Chats
