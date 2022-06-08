@@ -17,9 +17,9 @@ class ContactCard extends StatelessWidget {
           color: Colors.white,
           height: 30,
           width: 30,),
-          backgroundColor: Colors.blueGrey[200],
+          backgroundColor: Colors.blueGrey,
         ),
-        title: Text('New group',
+        title: Text(chatModel.name,
         style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.bold,
