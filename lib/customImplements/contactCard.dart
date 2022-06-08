@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:folder/models/chatModel.dart';
 
 class ContactCard extends StatelessWidget {
-  const ContactCard({Key? key}) : super(key: key);
+  final ChatModel chatModel;
+  const ContactCard(this.chatModel);
 
   @override
   Widget build(BuildContext context) {

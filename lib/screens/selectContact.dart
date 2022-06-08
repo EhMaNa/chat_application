@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folder/customImplements/contactCard.dart';
-
+import 'package:folder/customImplements/functions.dart';
 
 // Show Contacts Screen
 class ContactPage extends StatefulWidget {
@@ -28,8 +28,8 @@ class _ContactPageState extends State<ContactPage> {
         ],
       ),
       body: ListView.builder(
-        itemCount: 10,
-          itemBuilder: (context, index) => ContactCard())
+        itemCount: chats.length,
+          itemBuilder: (context, index) => ContactCard(chats[index]))
     );
   }
 }
