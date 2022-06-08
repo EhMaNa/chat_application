@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:folder/models/chatModel.dart';
 
 // Contains some custom functions and refactored widgets
 
@@ -18,3 +19,8 @@ Color generateColor (){
 
   return colors['$random'];
 }
+
+List<ChatModel> chats = [
+  ChatModel(name: "Tron",time: '12:30 AM', icon: 'person.svg', message: "Arivadache", inGroup: false),
+  ChatModel(name: "Psam",time: '1:39 PM', icon: 'person.svg', message: "Hola", inGroup: true),
+];
