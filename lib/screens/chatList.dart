@@ -16,8 +16,8 @@ class _ChatListState extends State<ChatList> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemCount: chats.length,
-        itemBuilder: (context, index) => MyCard(chats[index])
+        itemCount: chats.length - 1,
+        itemBuilder: (context, index) => MyCard(chats[index + 1])
       )
     );
   }
