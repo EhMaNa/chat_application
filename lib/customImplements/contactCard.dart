@@ -8,22 +8,25 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: (){},
-      child: ListTile(
-        leading: CircleAvatar(
-          radius: 23,
-          child: SvgPicture.asset('svg/group_black_36dp.svg',
-          color: Colors.white,
-          height: 30,
-          width: 30,),
-          backgroundColor: Colors.blueGrey,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(4.0, 3.0, 0.0, 0.0),
+      child: InkWell(
+        onTap: (){},
+        child: ListTile(
+          leading: CircleAvatar(
+            radius: 23,
+            child: SvgPicture.asset(chatModel.name == 'New group' ? 'svg/person_black_36dp.svg' : 'svg/group_black_36dp.svg',
+            color: Colors.white,
+            height: 30,
+            width: 30,),
+            backgroundColor: Colors.blueGrey,
+          ),
+          title: Text(chatModel.name,
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),),
         ),
-        title: Text(chatModel.name,
-        style: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.bold,
-        ),),
       ),
     );
   }
