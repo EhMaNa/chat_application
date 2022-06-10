@@ -9,7 +9,7 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(4.0, 3.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(3.0, 4.0, 0.0, 4.0),
       child: InkWell(
         onTap: (){},
         child: ListTile(
