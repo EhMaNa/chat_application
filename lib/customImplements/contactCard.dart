@@ -15,7 +15,7 @@ class ContactCard extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 23,
-            child: SvgPicture.asset(chatModel.name == 'New group' ? 'svg/person_black_36dp.svg' : 'svg/group_black_36dp.svg',
+            child: SvgPicture.asset(chatModel.name == 'New group' ? 'svg/group_black_36dp.svg' : 'svg/person_black_36dp.svg',
             color: Colors.white,
             height: 30,
             width: 30,),
