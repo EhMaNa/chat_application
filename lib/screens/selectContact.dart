@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:folder/customImplements/contactCard.dart';
-import 'package:folder/customImplements/functions.dart';
+import 'package:folder/customImplements/myImplements.dart';
 
 // Show Contacts Screen
-class ContactPage extends StatefulWidget {
-  const ContactPage({Key? key}) : super(key: key);
+class ContactsPage extends StatefulWidget {
+  const ContactsPage({Key? key}) : super(key: key);
 
   @override
-  _ContactPageState createState() => _ContactPageState();
+  _ContactsPageState createState() => _ContactsPageState();
 }
 
-class _ContactPageState extends State<ContactPage> {
+class _ContactsPageState extends State<ContactsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
