@@ -2,7 +2,7 @@ import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:folder/models/chatModel.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:folder/customImplements/functions.dart';
+import 'package:folder/customImplements/myImplements.dart';
 
 
 // Individual Chat Screen
