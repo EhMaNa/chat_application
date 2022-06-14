@@ -15,7 +15,7 @@ class _NewGroupState extends State<NewGroup> {
           title: Text('Add Members',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 15
+                fontSize: 16
             ),),
           actions: [
             IconButton(
@@ -25,8 +25,8 @@ class _NewGroupState extends State<NewGroup> {
           ],
         ),
         body: ListView.builder(
-            itemCount: chats.length,
-            itemBuilder: (context, index) => ContactCard(chats[index]))
+            itemCount: chats.length - 1,
+            itemBuilder: (context, index) => ContactCard(chats[index + 1]))
     );
   }
 }
