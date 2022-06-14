@@ -16,13 +16,8 @@ class _NewGroupState extends State<NewGroup> {
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16
-            ),),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.search_sharp),
-              onPressed: () {},
             ),
-          ],
+          ),
         ),
         body: ListView.builder(
             itemCount: chats.length - 1,
