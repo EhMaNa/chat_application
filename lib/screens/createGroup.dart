@@ -3,8 +3,6 @@ import 'package:folder/customImplements/contactCard.dart';
 import 'package:folder/customImplements/myImplements.dart';
 
 class NewGroup extends StatefulWidget {
-
-
   @override
   _NewGroupState createState() => _NewGroupState();
 }
@@ -14,7 +12,7 @@ class _NewGroupState extends State<NewGroup> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Select Contact',
+          title: Text('Add Members',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15
