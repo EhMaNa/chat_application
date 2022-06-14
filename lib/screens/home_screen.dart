@@ -49,7 +49,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
         ],),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ContactPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ContactsPage()));
         },
         tooltip: '',
         child: Icon(Icons.message_sharp),
