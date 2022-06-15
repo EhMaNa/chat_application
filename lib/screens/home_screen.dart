@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folder/screens/chatList.dart';
+import 'package:folder/screens/createGroup.dart';
 import 'package:folder/screens/selectContact.dart';
 
 
@@ -30,7 +31,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
               onSelected: (value){},
               itemBuilder: (buildContext) {
             return [
-              PopupMenuItem(child: Text('New group'), value: 'New group',),
+              PopupMenuItem(
+                child: Text('New group'),
+                value: 'New group',
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NewGroup()));
+                },
+              ),
               PopupMenuItem(child: Text('Broadcast'), value: 'Broadcast',),
               PopupMenuItem(child: Text('Settings'), value: 'Settings',)
             ];
