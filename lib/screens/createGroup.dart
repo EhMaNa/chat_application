@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folder/customImplements/contactCard.dart';
 import 'package:folder/customImplements/myImplements.dart';
+import 'package:folder/models/chatModel.dart';
 
 class NewGroup extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class NewGroup extends StatefulWidget {
 }
 
 class _NewGroupState extends State<NewGroup> {
+  List<ChatModel> groups = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,19 @@ class _NewGroupState extends State<NewGroup> {
             itemCount: chats.length - 1,
             itemBuilder: (context, index) {
               return InkWell(
-                onTap: (){},
+                onTap: (){
+                  if (chats[index].select == false){
+                    setState(() {
+                      chats[index].select = true;
+                      groups.add(chats[index]);
+                    });
+                  } else {
+                    setState(() {
+                      chats[index].select = false;
+                      groups.remove(chats[index]);
+                    });
+                  }
+                },
                   child: ContactCard(chats[index + 1]));
             })
     );
