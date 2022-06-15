@@ -21,7 +21,11 @@ class _NewGroupState extends State<NewGroup> {
         ),
         body: ListView.builder(
             itemCount: chats.length - 1,
-            itemBuilder: (context, index) => ContactCard(chats[index + 1]))
+            itemBuilder: (context, index) {
+              return InkWell(
+                onTap: (){},
+                  child: ContactCard(chats[index + 1]));
+            })
     );
   }
 }
