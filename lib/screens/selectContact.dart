@@ -29,7 +29,11 @@ class _ContactsPageState extends State<ContactsPage> {
       ),
       body: ListView.builder(
         itemCount: chats.length,
-          itemBuilder: (context, index) => ContactCard(chats[index]))
+          itemBuilder: (context, index) {
+            return InkWell(
+              onTap: (){},
+                child: ContactCard(chats[index]));
+          })
     );
   }
 }
