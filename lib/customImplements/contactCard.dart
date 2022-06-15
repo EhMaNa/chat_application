@@ -11,13 +11,34 @@ class ContactCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(3.0, 4.0, 0.0, 4.0),
       child: ListTile(
-        leading: CircleAvatar(
-          radius: 23,
-          child: SvgPicture.asset(chatModel.name == 'New group' ? 'svg/group_black_36dp.svg' : 'svg/person_black_36dp.svg',
-          color: Colors.white,
-          height: 30,
-          width: 30,),
-          backgroundColor: Colors.blueGrey,
+        leading: Container(
+          height: 53,
+          width: 50,
+          child: Stack(
+            children: [
+              CircleAvatar(
+                radius: 23,
+                child: SvgPicture.asset(chatModel.name == 'New group' ? 'svg/group_black_36dp.svg' : 'svg/person_black_36dp.svg',
+                color: Colors.white,
+                height: 30,
+                width: 30,),
+                backgroundColor: Colors.blueGrey[200],
+              ),
+              Positioned(
+                bottom: 4,
+                right: 5,
+                child: CircleAvatar(
+                  backgroundColor: Colors.teal,
+                    radius: 11,
+                    child: Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                ),
+              )
+            ],
+          ),
         ),
         title: Text(chatModel.name,
         style: TextStyle(
