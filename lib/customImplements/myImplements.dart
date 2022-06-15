@@ -21,7 +21,7 @@ Color generateColor (){
 }
 
 List<ChatModel> chats = [
-  ChatModel(name: "New group",time: '', icon: 'person.svg', message: "", inGroup: true),
-  ChatModel(name: "Tron",time: '12:30 AM', icon: 'person.svg', message: "Arivadache", inGroup: false),
+  ChatModel(name: "New group",time: '', message: "", inGroup: true),
+  ChatModel(name: "Tron",time: '12:30 AM', icon: 'person.svg', message: "Arivadache", inGroup: true),
   ChatModel(name: "Psam",time: '1:39 PM', icon: 'person.svg', message: "Hola", inGroup: true),
 ];
