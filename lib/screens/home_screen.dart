@@ -28,18 +28,15 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
         actions: [
           IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
           PopupMenuButton(
-              onSelected: (value){},
+              onSelected: (value){
+                setState(() {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NewGroup()));
+                });
+              },
               itemBuilder: (buildContext) {
             return [
-              PopupMenuItem(
-                child: Text('New group'),
-                value: 'New group',
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => NewGroup()));
-                },
-              ),
-              PopupMenuItem(child: Text('Broadcast'), value: 'Broadcast',),
-              PopupMenuItem(child: Text('Settings'), value: 'Settings',)
+              PopupMenuItem(child: Text('New group'), value: 'New group',),
+              PopupMenuItem(child: Text('Settings'), value: 'Profile',)
             ];
           })
         ],
