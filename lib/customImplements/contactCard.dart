@@ -16,12 +16,19 @@ class ContactCard extends StatelessWidget {
           width: 50,
           child: Stack(
             children: [
-              CircleAvatar(
+              chatModel.name == 'New group' ? CircleAvatar(
                 radius: 23,
-                child: SvgPicture.asset(chatModel.name == 'New group' ? 'svg/group_black_36dp.svg' : 'svg/person_black_36dp.svg',
+                child: SvgPicture.asset('svg/group_black_36dp.svg',
                 color: Colors.white,
                 height: 30,
                 width: 30,),
+                backgroundColor: Colors.blue,
+              ) : CircleAvatar(
+                radius: 23,
+                child: SvgPicture.asset('svg/person_black_36dp.svg',
+                  color: Colors.white,
+                  height: 30,
+                  width: 30,),
                 backgroundColor: Colors.blueGrey[200],
               ),
               chatModel.select ? Positioned(
