@@ -24,7 +24,7 @@ class ContactCard extends StatelessWidget {
                 width: 30,),
                 backgroundColor: Colors.blueGrey[200],
               ),
-              Positioned(
+              chatModel.select ? Positioned(
                 bottom: 4,
                 right: 5,
                 child: CircleAvatar(
@@ -36,7 +36,7 @@ class ContactCard extends StatelessWidget {
                       size: 18,
                     ),
                 ),
-              )
+              ) : Container()
             ],
           ),
         ),
