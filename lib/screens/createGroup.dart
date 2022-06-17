@@ -26,15 +26,15 @@ class _NewGroupState extends State<NewGroup> {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: (){
-                  if (chats[index].select == false){
+                  if (chats[index + 1].select == false){
                     setState(() {
-                      chats[index].select = true;
-                      groups.add(chats[index]);
+                      chats[index + 1].select = true;
+                      groups.add(chats[index + 1]);
                     });
                   } else {
                     setState(() {
-                      chats[index].select = false;
-                      groups.remove(chats[index]);
+                      chats[index + 1].select = false;
+                      groups.remove(chats[index + 1]);
                     });
                   }
                 },
