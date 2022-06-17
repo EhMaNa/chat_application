@@ -131,6 +131,7 @@ class _ChatPageState extends State<ChatPage> {
                 ),
                 CircleAvatar(
                     radius: 20,
+                    backgroundColor: Colors.blueGrey[200] ,
                     child: SvgPicture.asset(
                       widget.chatModel.inGroup
                           ? 'svg/person_black_36dp.svg'
