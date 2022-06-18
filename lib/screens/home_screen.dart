@@ -29,9 +29,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
           IconButton(icon: Icon(Icons.search_sharp), onPressed: (){},),
           PopupMenuButton(
               onSelected: (value){
-                setState(() {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => NewGroup()));
-                });
               },
               itemBuilder: (buildContext) {
             return [
