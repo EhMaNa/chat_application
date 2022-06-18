@@ -56,3 +56,43 @@ class ContactCard extends StatelessWidget {
     );
   }
 }
+
+Widget avatarCard (){
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Stack(
+          children: [
+            CircleAvatar(
+              radius: 23,
+              child: SvgPicture.asset('svg/group_black_36dp.svg',
+                color: Colors.white,
+                height: 30,
+                width: 30,),
+              backgroundColor: Colors.blueGrey[200],
+            ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: CircleAvatar(
+                backgroundColor: Colors.grey,
+                radius: 11,
+                child: Icon(
+                  Icons.clear,
+                  color: Colors.white,
+                  size: 13,
+                ),
+              ),
+            )
+          ],
+        ),
+        Text('Name',
+        style: TextStyle(
+          fontSize: 12,
+        ),)
+      ],
+    ),
+  );
+}
