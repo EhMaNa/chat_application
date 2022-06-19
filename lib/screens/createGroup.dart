@@ -21,25 +21,44 @@ class _NewGroupState extends State<NewGroup> {
             ),
           ),
         ),
-        body: ListView.builder(
-            itemCount: chats.length - 1,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: (){
-                  if (chats[index + 1].select == false){
-                    setState(() {
-                      chats[index + 1].select = true;
-                      groups.add(chats[index + 1]);
-                    });
-                  } else {
-                    setState(() {
-                      chats[index + 1].select = false;
-                      groups.remove(chats[index + 1]);
-                    });
-                  }
-                },
-                  child: ContactCard(chats[index + 1]));
-            })
+        body: Stack(
+          children: [
+            ListView.builder(
+                itemCount: chats.length - 1,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: (){
+                      if (chats[index + 1].select == false){
+                        setState(() {
+                          chats[index + 1].select = true;
+                          groups.add(chats[index + 1]);
+                        });
+                      } else {
+                        setState(() {
+                          chats[index + 1].select = false;
+                          groups.remove(chats[index + 1]);
+                        });
+                      }
+                    },
+                      child: ContactCard(chats[index + 1]));
+                }),
+            Column(
+              children: [
+                Container(
+                  height: 78,
+                  color: Colors.white,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                      itemCount: chats.length,
+                      itemBuilder: (context, index) {
+                      return avatarCard();
+                      }),
+                ),
+                Divider(thickness: 2,)
+              ],
+            )
+          ],
+        )
     );
   }
 }
