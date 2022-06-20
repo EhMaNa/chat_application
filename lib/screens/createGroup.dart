@@ -40,7 +40,7 @@ class _NewGroupState extends State<NewGroup> {
                         });
                       }
                     },
-                      child: ContactCard(chats[index + 1]));
+                      child: ContactCard(chats[index + 1], ''));
                 }),
             Column(
               children: [
@@ -51,7 +51,7 @@ class _NewGroupState extends State<NewGroup> {
                     scrollDirection: Axis.horizontal,
                       itemCount: chats.length,
                       itemBuilder: (context, index) {
-                      return avatarCard();
+                      return ContactCard(chats[index], '');
                       }),
                 ),
                 Divider(thickness: 2,)
