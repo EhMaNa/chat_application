@@ -32,7 +32,7 @@ class _ContactsPageState extends State<ContactsPage> {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: (){},
-                child: ContactCard(chats[index]));
+                child: ContactCard(chats[index], 'Contact'));
           })
     );
   }
