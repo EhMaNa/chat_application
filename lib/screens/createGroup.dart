@@ -49,9 +49,20 @@ class _NewGroupState extends State<NewGroup> {
                   color: Colors.white,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                      itemCount: chats.length,
+                      itemCount: chats.length - 1,
                       itemBuilder: (context, index) {
-                      return ContactCard(chats[index], '');
+                      if (chats[index + 1].select == true) {
+                        return InkWell(
+                          onTap: (){
+                            setState(() {
+                              groups.remove(chats[index + 1]);
+                              chats[index + 1].select = false;
+                            });
+                          },
+                            child: ContactCard(chats[index + 1], ''));
+                      } else {
+                        return Container();
+                      }
                       }),
                 ),
                 Divider(thickness: 2,)
