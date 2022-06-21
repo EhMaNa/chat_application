@@ -40,7 +40,7 @@ class _NewGroupState extends State<NewGroup> {
                         });
                       }
                     },
-                      child: ContactCard(chats[index + 1], ''));
+                      child: ContactCard(chats[index + 1], 'Contact'));
                 }),
             Column(
               children: [
