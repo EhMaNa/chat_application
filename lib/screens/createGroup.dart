@@ -42,7 +42,7 @@ class _NewGroupState extends State<NewGroup> {
                     },
                       child: ContactCard(chats[index + 1], 'Contact'));
                 }),
-            Column(
+            groups.length > 0 ? Column(
               children: [
                 Container(
                   height: 78,
@@ -67,7 +67,7 @@ class _NewGroupState extends State<NewGroup> {
                 ),
                 Divider(thickness: 2,)
               ],
-            )
+            ) : Container(),
           ],
         )
     );
