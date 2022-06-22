@@ -26,6 +26,11 @@ class _NewGroupState extends State<NewGroup> {
             ListView.builder(
                 itemCount: chats.length - 1,
                 itemBuilder: (context, index) {
+                  if (index == 0 ){
+                    return Container(
+                      height: groups.length > 0 ? 90 : 10,
+                    );
+                  }
                   return InkWell(
                     onTap: (){
                       if (chats[index + 1].select == false){
