@@ -24,7 +24,7 @@ class _NewGroupState extends State<NewGroup> {
         body: Stack(
           children: [
             ListView.builder(
-                itemCount: chats.length - 1,
+                itemCount: chats.length,
                 itemBuilder: (context, index) {
                   if (index == 0 ){
                     return Container(
@@ -33,19 +33,19 @@ class _NewGroupState extends State<NewGroup> {
                   }
                   return InkWell(
                     onTap: (){
-                      if (chats[index + 1].select == false){
+                      if (chats[index].select == false){
                         setState(() {
-                          chats[index + 1].select = true;
-                          groups.add(chats[index + 1]);
+                          chats[index].select = true;
+                          groups.add(chats[index]);
                         });
                       } else {
                         setState(() {
-                          chats[index + 1].select = false;
-                          groups.remove(chats[index + 1]);
+                          chats[index].select = false;
+                          groups.remove(chats[index]);
                         });
                       }
                     },
-                      child: ContactCard(chats[index + 1], 'Contact'));
+                      child: ContactCard(chats[index], 'Contact'));
                 }),
             groups.length > 0 ? Column(
               children: [
