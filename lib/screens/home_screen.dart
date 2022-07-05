@@ -30,7 +30,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
           PopupMenuButton(
               onSelected: (value){
                 switch (value){
-                  case "New group" : { Navigator.push(context, MaterialPageRoute(builder: (context) => NewGroup()));}
+                  case "New group" : {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => NewGroup()));
+                  }
+                  break;
+                  case "Settings" : {}
                 }
 
               },
