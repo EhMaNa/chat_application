@@ -34,7 +34,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
                     Navigator.push(context, MaterialPageRoute(builder: (context) => NewGroup()));
                   }
                   break;
-                  case "Settings" : {}
+                  case "Settings" : {
+
+                  }
                 }
 
               },
