@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folder/customImplements/contactCard.dart';
 import 'package:folder/customImplements/myImplements.dart';
+import 'package:folder/screens/chatPage.dart';
 
 // Show Contacts Screen
 class ContactsPage extends StatefulWidget {
@@ -31,7 +32,9 @@ class _ContactsPageState extends State<ContactsPage> {
         itemCount: chats.length,
           itemBuilder: (context, index) {
             return InkWell(
-              onTap: (){},
+              onTap: (){
+                //Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage(widget.chatModel)));
+              },
                 child: ContactCard(chats[index], 'Contact'));
           })
     );
