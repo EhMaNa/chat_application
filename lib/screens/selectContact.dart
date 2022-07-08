@@ -33,7 +33,7 @@ class _ContactsPageState extends State<ContactsPage> {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: (){
-                //Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage(widget.chatModel)));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage(chats[index])));
               },
                 child: ContactCard(chats[index], 'Contact'));
           })
