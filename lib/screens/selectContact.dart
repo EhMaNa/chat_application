@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folder/customImplements/contactCard.dart';
 import 'package:folder/customImplements/myImplements.dart';
 import 'package:folder/screens/chatPage.dart';
+import 'package:folder/screens/createGroup.dart';
 
 // Show Contacts Screen
 class ContactsPage extends StatefulWidget {
@@ -33,8 +34,16 @@ class _ContactsPageState extends State<ContactsPage> {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage(chats[index])));
-              },
+                    index != 0
+                        ? Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChatPage(chats[index])))
+                        : Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NewGroup()));
+                  },
                 child: ContactCard(chats[index], 'Contact'));
           })
     );
