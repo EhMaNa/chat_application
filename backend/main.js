@@ -6,3 +6,8 @@ const app = express();
 const port = process.env.port || 3000;
 
 let server = http.createServer(app)
+let io = require('socket.io')(server, {
+    cors: {
+        origin: ""
+    }
+})
