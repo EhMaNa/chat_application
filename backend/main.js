@@ -1,5 +1,5 @@
 const express = require('express');
-const http = require("http");
+const http = require('http');
 const cors = require('cors');
 const app = express();
 
@@ -15,3 +15,11 @@ let io = require('socket.io')(server, {
 
 app.use(express.json())
 app.use(cors())
+
+io.on('connection', (socket) => {
+    console.log('There is connection')
+})
+
+server.listen(port, () => {
+    console.log('Server has started');
+})
