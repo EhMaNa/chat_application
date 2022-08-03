@@ -122,7 +122,9 @@ class _ChatPageState extends State<ChatPage> {
       child: Stack(
         children: [
           Image.asset('images/backgroundW.jpg',
-          height: MediaQuery.of(context).size.height,),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,),
           Scaffold(
               backgroundColor: Colors.transparent,
               appBar: AppBar(
