@@ -10,6 +10,10 @@ class SendCard extends StatefulWidget {
 class _SendCardState extends State<SendCard> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height
+      ),
+    );
   }
 }
