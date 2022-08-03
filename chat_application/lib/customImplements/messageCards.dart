@@ -12,8 +12,19 @@ class _SendCardState extends State<SendCard> {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height
+        maxWidth: MediaQuery.of(context).size.width - 45,
       ),
+      child: Card(
+          child: Stack(
+            children: [
+              Text('Hello'),
+              Row(
+                children: [
+                  Text('Hello'),
+                ],
+              ),
+            ],
+          )),
     );
   }
 }
