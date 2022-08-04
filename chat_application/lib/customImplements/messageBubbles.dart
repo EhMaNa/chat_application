@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SendBubble extends StatefulWidget {
@@ -12,17 +13,23 @@ class _SendBubbleState extends State<SendBubble> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Material(
-        elevation: 5,
-        color: Colors.lightBlueAccent,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
-          child: Text('Hello',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15.0
-          ),),
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Material(
+            elevation: 5,
+            borderRadius: BorderRadiusDirectional.circular(30),
+            color: Colors.lightBlueAccent,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+              child: Text('Hello',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15.0
+              ),),
+            ),
+          ),
+        ],
       ),
     );
 
