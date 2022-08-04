@@ -1,5 +1,6 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:folder/customImplements/messageBubbles.dart';
 import 'package:folder/models/chatModel.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:folder/customImplements/myImplements.dart';
@@ -198,7 +199,11 @@ class _ChatPageState extends State<ChatPage> {
                   width: MediaQuery.of(context).size.width,
                   child: Stack(
                     children: [
-                      ListView(),
+                      ListView(
+                        children: [
+                          SendBubble()
+                        ],
+                      ),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Column(
