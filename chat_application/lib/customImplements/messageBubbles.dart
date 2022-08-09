@@ -17,7 +17,8 @@ class _SendBubbleState extends State<SendBubble> {
         children: [
           Material(
             elevation: 5,
-            borderRadius: BorderRadiusDirectional.circular(30),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(30), bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),),
             color: Colors.lightBlueAccent,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
