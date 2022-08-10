@@ -201,6 +201,7 @@ class _ChatPageState extends State<ChatPage> {
                     children: [
                       ListView(
                         //reverse: true,
+                        //shrinkWrap: true,
                         children: [
                           SendBubble()
                         ],
