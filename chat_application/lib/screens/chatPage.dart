@@ -4,7 +4,7 @@ import 'package:folder/customImplements/messageBubbles.dart';
 import 'package:folder/models/chatModel.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:folder/customImplements/myImplements.dart';
-//import 'package:socket_io_client/socket_io_client.dart' as IO;
+import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 
 // Individual Chat Screen
@@ -19,7 +19,7 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   bool showEmoji = false;
-  //IO.Socket socket = ;
+  IO.Socket socket = IO.io('https');
   FocusNode focus = FocusNode();
   TextEditingController _controller = TextEditingController();
 
