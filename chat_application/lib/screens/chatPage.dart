@@ -19,12 +19,6 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   bool showEmoji = false;
-  IO.Socket socket = IO.io('https', <String, dynamic> {
-    "transport" : ["websocket"],
-    "autoConnect" : false
-  }
-      //OptionBuilder().setTransports(['websocket'])
-  );
   FocusNode focus = FocusNode();
   TextEditingController _controller = TextEditingController();
 
@@ -40,7 +34,15 @@ class _ChatPageState extends State<ChatPage> {
       }
     });
   }
-
+  void connect() {
+    IO.Socket socket = IO.io('https', <String, dynamic> {
+      "transport" : ["websocket"],
+      "autoConnect" : false
+    }
+      //OptionBuilder().setTransports(['websocket'])
+    );
+    socket.connect();
+  }
   Widget emojiSelector() {
     return EmojiPicker(
       onEmojiSelected: (category, emoji) {
