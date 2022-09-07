@@ -19,7 +19,12 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   bool showEmoji = false;
-  IO.Socket socket = IO.io('https');
+  IO.Socket socket = IO.io('https', <String, dynamic> {
+    "transport" : ["websocket"],
+    "autoConnect" : false
+  }
+      //OptionBuilder().setTransports(['websocket'])
+  );
   FocusNode focus = FocusNode();
   TextEditingController _controller = TextEditingController();
 
