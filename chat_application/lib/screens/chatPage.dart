@@ -26,6 +26,7 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    connect();
     focus.addListener(() {
       if (focus.hasFocus) {
         setState(() {
@@ -35,13 +36,22 @@ class _ChatPageState extends State<ChatPage> {
     });
   }
   void connect() {
-    IO.Socket socket = IO.io('https', <String, dynamic> {
+    /*IO.Socket socket = IO.io('https', <String, dynamic> {
       "transport" : ["websocket"],
       "autoConnect" : false
     }
       //OptionBuilder().setTransports(['websocket'])
     );
     socket.connect();
+    socket.onConnect((data) => print('I  am working')); */
+    IO.Socket socket = IO.io('http://localhost:3000',
+        IO.OptionBuilder()
+            .setTransports(['websocket']) // for Flutter or Dart VM
+            .disableAutoConnect()  // disable auto-connection
+            .build()
+    );
+    socket.connect();
+    socket.onConnect((data) => print('I  am working'));
   }
   Widget emojiSelector() {
     return EmojiPicker(
