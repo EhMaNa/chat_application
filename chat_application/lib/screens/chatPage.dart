@@ -37,7 +37,7 @@ class _ChatPageState extends State<ChatPage> {
   }
   void connect() {
     /*IO.Socket socket = IO.io('https', <String, dynamic> {
-      "transport" : ["websocket"],
+      "transports" : ["websocket"],
       "autoConnect" : false
     }
       //OptionBuilder().setTransports(['websocket'])
