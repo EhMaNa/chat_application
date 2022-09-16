@@ -52,6 +52,7 @@ class _ChatPageState extends State<ChatPage> {
     );
     socket.connect();
     socket.onConnect((data) => print('I  am working'));
+    print(socket.connected);
   }
   Widget emojiSelector() {
     return EmojiPicker(
