@@ -6,7 +6,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:folder/customImplements/myImplements.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
-
 // Individual Chat Screen
 class ChatPage extends StatefulWidget {
   const ChatPage(this.chatModel);
@@ -35,6 +34,7 @@ class _ChatPageState extends State<ChatPage> {
       }
     });
   }
+
   void connect() {
     /*IO.Socket socket = IO.io('https', <String, dynamic> {
       "transports" : ["websocket"],
@@ -44,16 +44,18 @@ class _ChatPageState extends State<ChatPage> {
     );
     socket.connect();
     socket.onConnect((data) => print('I  am working')); */
-    IO.Socket socket = IO.io('http://localhost:3000',
+    IO.Socket socket = IO.io(
+        'http://localhost:3000',
         IO.OptionBuilder()
             .setTransports(['websocket']) // for Flutter or Dart VM
-            .disableAutoConnect()  // disable auto-connection
-            .build()
-    );
+            .disableAutoConnect() // disable auto-connection
+            .build());
     socket.connect();
+    socket.emit("/test", "Hello World");
     socket.onConnect((data) => print('I  am working'));
     print(socket.connected);
   }
+
   Widget emojiSelector() {
     return EmojiPicker(
       onEmojiSelected: (category, emoji) {
@@ -68,16 +70,15 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
-  Widget buildBottomSheet (BuildContext context) {
+  Widget buildBottomSheet(BuildContext context) {
     return Container(
       height: 270,
-        decoration: BoxDecoration(
+      decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
-          )
-        ),
+          )),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: Column(
@@ -85,31 +86,40 @@ class _ChatPageState extends State<ChatPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                attachFileIcons(Icons.insert_drive_file, generateColor(), "File"),
-                SizedBox(width: 40,),
+                attachFileIcons(
+                    Icons.insert_drive_file, generateColor(), "File"),
+                SizedBox(
+                  width: 40,
+                ),
                 attachFileIcons(Icons.insert_photo, generateColor(), "Gallery"),
-                SizedBox(width: 40,),
+                SizedBox(
+                  width: 40,
+                ),
                 attachFileIcons(Icons.camera_alt, generateColor(), "Camera"),
               ],
             ),
-            SizedBox(height: 40,),
+            SizedBox(
+              height: 40,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 attachFileIcons(Icons.headphones, generateColor(), "Audio"),
-                SizedBox(width: 40,),
+                SizedBox(
+                  width: 40,
+                ),
                 attachFileIcons(Icons.person, generateColor(), "Contact"),
               ],
             ),
           ],
         ),
       ),
-      );
+    );
   }
 
-  Widget attachFileIcons (IconData icon, Color color, String name) {
+  Widget attachFileIcons(IconData icon, Color color, String name) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Column(
         children: [
           CircleAvatar(
@@ -142,10 +152,12 @@ class _ChatPageState extends State<ChatPage> {
       },
       child: Stack(
         children: [
-          Image.asset('images/backgroundW.jpg',
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          fit: BoxFit.cover,),
+          Image.asset(
+            'images/backgroundW.jpg',
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
+          ),
           Scaffold(
               backgroundColor: Colors.transparent,
               appBar: AppBar(
@@ -158,7 +170,7 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                     CircleAvatar(
                         radius: 20,
-                        backgroundColor: Colors.blueGrey[200] ,
+                        backgroundColor: Colors.blueGrey[200],
                         child: SvgPicture.asset(
                           widget.chatModel.inGroup
                               ? 'svg/person_black_36dp.svg'
@@ -222,9 +234,7 @@ class _ChatPageState extends State<ChatPage> {
                       ListView(
                         //reverse: true,
                         //shrinkWrap: true,
-                        children: [
-                          SendBubble()
-                        ],
+                        children: [SendBubble()],
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,
@@ -239,13 +249,15 @@ class _ChatPageState extends State<ChatPage> {
                                       margin: EdgeInsets.only(
                                           left: 2, right: 2, bottom: 2),
                                       shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(20)),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
                                       child: TextFormField(
                                         controller: _controller,
                                         focusNode: focus,
                                         maxLines: 5,
                                         minLines: 1,
-                                        textAlignVertical: TextAlignVertical.center,
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
                                         keyboardType: TextInputType.multiline,
                                         decoration: InputDecoration(
                                             prefixIcon: IconButton(
@@ -256,32 +268,37 @@ class _ChatPageState extends State<ChatPage> {
                                                     showEmoji = !showEmoji;
                                                   });
                                                 },
-                                                icon: Icon(
-                                                    Icons.emoji_emotions_outlined)),
+                                                icon: Icon(Icons
+                                                    .emoji_emotions_outlined)),
                                             suffixIcon: Row(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 IconButton(
                                                     onPressed: () {
                                                       showModalBottomSheet(
-                                                        backgroundColor: Colors.transparent,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
                                                           context: context,
-                                                          builder: buildBottomSheet);
+                                                          builder:
+                                                              buildBottomSheet);
                                                     },
-                                                    icon: Icon(
-                                                        Icons.attach_file_outlined)
+                                                    icon: Icon(Icons
+                                                        .attach_file_outlined)),
+                                                SizedBox(
+                                                  width: 10,
                                                 ),
-                                                SizedBox(width: 10,),
                                                 IconButton(
                                                     onPressed: () {},
                                                     icon: Icon(Icons
                                                         .settings_voice_outlined)),
-                                                SizedBox(width: 15,),
+                                                SizedBox(
+                                                  width: 15,
+                                                ),
                                               ],
                                             ),
                                             contentPadding: EdgeInsets.all(5),
-                                            hintText: 'Type your message here'
-                                        ),
+                                            hintText: 'Type your message here'),
                                       )),
                                 ),
                               ],
@@ -291,12 +308,9 @@ class _ChatPageState extends State<ChatPage> {
                         ),
                       )
                     ],
-                  )
-              )
-          ),
+                  ))),
         ],
       ),
     );
   }
 }
-
