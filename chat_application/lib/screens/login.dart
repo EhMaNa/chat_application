@@ -24,6 +24,19 @@ class _MyWidgetState extends State<MyWidget> {
               chats[1].name,
               style: TextStyle(fontSize: 20),
             ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.person,
+              size: 25,
+            ),
+            title: Text(
+              chats[1].name,
+              style: TextStyle(fontSize: 20),
+            ),
           )
         ],
       ),
