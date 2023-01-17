@@ -15,14 +15,17 @@ class _MyWidgetState extends State<MyWidget> {
         body: Center(
       child: Column(
         children: [
-          ListTile(
-            leading: Icon(
-              Icons.person,
-              size: 25,
-            ),
-            title: Text(
-              chats[1].name,
-              style: TextStyle(fontSize: 20),
+          GestureDetector(
+            onTap: () {},
+            child: ListTile(
+              leading: Icon(
+                Icons.person,
+                size: 25,
+              ),
+              title: Text(
+                chats[1].name,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ),
           SizedBox(
