@@ -18,6 +18,9 @@ app.use(express.json())
 
 io.on('connection', (socket) => {
     console.log('There is connection')
+    socket.on("/test", (msg) => {
+        console.log(msg)
+    })
 })
 
 server.listen(port, '0.0.0.0', () => {
