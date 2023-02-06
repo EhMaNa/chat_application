@@ -260,7 +260,13 @@ class _ChatPageState extends State<ChatPage> {
                                         textAlignVertical:
                                             TextAlignVertical.center,
                                         keyboardType: TextInputType.multiline,
-                                        onChanged: (value) {},
+                                        onChanged: (value) {
+                                          setState(() {
+                                            value.length > 0
+                                                ? showSendButton = true
+                                                : showSendButton = false;
+                                          });
+                                        },
                                         decoration: InputDecoration(
                                             prefixIcon: IconButton(
                                                 onPressed: () {
