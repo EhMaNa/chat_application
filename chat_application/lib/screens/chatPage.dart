@@ -18,6 +18,7 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   bool showEmoji = false;
+  bool showSendButton = false;
   FocusNode focus = FocusNode();
   TextEditingController _controller = TextEditingController();
 
@@ -259,6 +260,7 @@ class _ChatPageState extends State<ChatPage> {
                                         textAlignVertical:
                                             TextAlignVertical.center,
                                         keyboardType: TextInputType.multiline,
+                                        onChanged: (value) {},
                                         decoration: InputDecoration(
                                             prefixIcon: IconButton(
                                                 onPressed: () {
