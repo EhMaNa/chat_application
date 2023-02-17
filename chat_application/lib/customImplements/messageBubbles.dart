@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SendBubble extends StatefulWidget {
-  const SendBubble({Key? key}) : super(key: key);
+class MessageBubble extends StatefulWidget {
+  const MessageBubble({Key? key}) : super(key: key);
 
   @override
-  _SendBubbleState createState() => _SendBubbleState();
+  _MessageBubbleState createState() => _MessageBubbleState();
 }
 
-class _SendBubbleState extends State<SendBubble> {
+class _MessageBubbleState extends State<MessageBubble> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,25 +17,26 @@ class _SendBubbleState extends State<SendBubble> {
         children: [
           Material(
             elevation: 5,
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(30), bottomLeft: Radius.circular(30),
-            bottomRight: Radius.circular(30),),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
             color: Colors.lightBlueAccent,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
-              child: Text('Hello',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15.0
-              ),),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+              child: Text(
+                'Hello',
+                style: TextStyle(color: Colors.white, fontSize: 15.0),
+              ),
             ),
           ),
         ],
       ),
     );
 
-
-
-      /*Align(
+    /*Align(
       alignment: Alignment.centerRight,
       child: ConstrainedBox(
         constraints: BoxConstraints(
