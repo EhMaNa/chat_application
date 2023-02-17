@@ -24,7 +24,6 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     connect();
     focus.addListener(() {
@@ -298,8 +297,10 @@ class _ChatPageState extends State<ChatPage> {
                                                 ),
                                                 IconButton(
                                                     onPressed: () {},
-                                                    icon: Icon(Icons
-                                                        .settings_voice_outlined)),
+                                                    icon: Icon(showSendButton
+                                                        ? Icons.send
+                                                        : Icons
+                                                            .settings_voice_outlined)),
                                                 SizedBox(
                                                   width: 15,
                                                 ),
