@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MessageBubble extends StatefulWidget {
-  const MessageBubble({Key? key}) : super(key: key);
+  MessageBubble({Key? key, required this.message}) : super(key: key);
+
+  String message;
 
   @override
   _MessageBubbleState createState() => _MessageBubbleState();
@@ -27,7 +29,7 @@ class _MessageBubbleState extends State<MessageBubble> {
               padding:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
               child: Text(
-                'Hello',
+                widget.message,
                 style: TextStyle(color: Colors.white, fontSize: 15.0),
               ),
             ),
