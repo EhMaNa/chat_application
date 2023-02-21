@@ -234,7 +234,11 @@ class _ChatPageState extends State<ChatPage> {
                       ListView(
                         //reverse: true,
                         //shrinkWrap: true,
-                        children: [MessageBubble()],
+                        children: [
+                          MessageBubble(
+                            message: widget.chatModel.message,
+                          )
+                        ],
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,
