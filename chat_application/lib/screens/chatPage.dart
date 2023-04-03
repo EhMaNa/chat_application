@@ -57,15 +57,19 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   Widget emojiSelector() {
-    return EmojiPicker(
-      onEmojiSelected: (category, emoji) {
-        print(emoji);
-        setState(() {
-          _controller.text = _controller.text + emoji.emoji;
-        });
-      },
-      config: Config(
-        columns: 7,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      height: 300,
+      child: EmojiPicker(
+        onEmojiSelected: (category, emoji) {
+          print(emoji);
+          setState(() {
+            _controller.text = _controller.text + emoji.emoji;
+          });
+        },
+        config: Config(
+          columns: 5,
+        ),
       ),
     );
   }
