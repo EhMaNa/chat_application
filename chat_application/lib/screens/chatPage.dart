@@ -285,37 +285,39 @@ class _ChatPageState extends State<ChatPage> {
                                                 },
                                                 icon: Icon(Icons
                                                     .emoji_emotions_outlined)),
-                                            suffixIcon: Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                IconButton(
-                                                    onPressed: () {
-                                                      showModalBottomSheet(
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          context: context,
-                                                          builder:
-                                                              buildBottomSheet);
-                                                    },
-                                                    icon: Icon(Icons
-                                                        .attach_file_outlined)),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                IconButton(
-                                                    onPressed: () {},
-                                                    icon: Icon(showSendButton
-                                                        ? Icons.send
-                                                        : Icons
-                                                            .settings_voice_outlined)),
-                                                SizedBox(
-                                                  width: 15,
-                                                ),
-                                              ],
+                                            suffixIcon: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  IconButton(
+                                                      onPressed: () {
+                                                        showModalBottomSheet(
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            context: context,
+                                                            builder:
+                                                                buildBottomSheet);
+                                                      },
+                                                      icon: Icon(Icons
+                                                          .attach_file_outlined)),
+                                                  IconButton(
+                                                      onPressed: () {},
+                                                      icon: Icon(showSendButton
+                                                          ? Icons.send
+                                                          : Icons
+                                                              .settings_voice_outlined)),
+                                                ],
+                                              ),
                                             ),
                                             contentPadding: EdgeInsets.all(5),
-                                            hintText: 'Type your message here'),
+                                            hintText: 'Type your message here',
+                                            hintStyle: Theme.of(context)
+                                                .textTheme
+                                                .labelLarge!
+                                                .copyWith(fontSize: 17)),
                                       )),
                                 ),
                               ],
