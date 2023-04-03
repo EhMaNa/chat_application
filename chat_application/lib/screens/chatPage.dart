@@ -153,7 +153,7 @@ class _ChatPageState extends State<ChatPage> {
       child: Stack(
         children: [
           Image.asset(
-            'images/backgroundW.jpg',
+            'assets/images/backgroundW.jpg',
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
@@ -173,8 +173,8 @@ class _ChatPageState extends State<ChatPage> {
                         backgroundColor: Colors.blueGrey[200],
                         child: SvgPicture.asset(
                           widget.chatModel.inGroup
-                              ? 'svg/person_black_36dp.svg'
-                              : 'svg/group_black_36dp.svg',
+                              ? 'assets/svg/person_black_36dp.svg'
+                              : 'assets/svg/group_black_36dp.svg',
                           color: Colors.white,
                           height: 30,
                           width: 30,
