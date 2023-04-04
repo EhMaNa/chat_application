@@ -16,36 +16,33 @@ class _ContactsPageState extends State<ContactsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Select Contact',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16
-        ),),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search_sharp),
-            onPressed: () {},
+        appBar: AppBar(
+          title: Text(
+            'Select Contact',
           ),
-        ],
-      ),
-      body: ListView.builder(
-        itemCount: chats.length,
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: (){
+          actions: [
+            IconButton(
+              icon: Icon(Icons.search_sharp),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: ListView.builder(
+            itemCount: chats.length,
+            itemBuilder: (context, index) {
+              return InkWell(
+                  onTap: () {
                     index != 0
-                        ? Navigator.push(
+                        ? Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ChatPage(chats[index])))
-                        : Navigator.push(
+                        : Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => NewGroup()));
                   },
-                child: ContactCard(chats[index], 'Contact'));
-          })
-    );
+                  child: ContactCard(chats[index], 'Contact'));
+            }));
   }
 }
