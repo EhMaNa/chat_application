@@ -23,7 +23,7 @@ class ContactCard extends StatelessWidget {
                         ? CircleAvatar(
                             radius: 23,
                             child: SvgPicture.asset(
-                              'svg/group_black_36dp.svg',
+                              'assets/svg/group_black_36dp.svg',
                               color: Colors.white,
                               height: 30,
                               width: 30,
@@ -33,7 +33,7 @@ class ContactCard extends StatelessWidget {
                         : CircleAvatar(
                             radius: 23,
                             child: SvgPicture.asset(
-                              'svg/person_black_36dp.svg',
+                              'assets/svg/person_black_36dp.svg',
                               color: Colors.white,
                               height: 30,
                               width: 30,
@@ -77,7 +77,7 @@ class ContactCard extends StatelessWidget {
                     CircleAvatar(
                       radius: 23,
                       child: SvgPicture.asset(
-                        'svg/group_black_36dp.svg',
+                        'assets/svg/group_black_36dp.svg',
                         color: Colors.white,
                         height: 30,
                         width: 30,
