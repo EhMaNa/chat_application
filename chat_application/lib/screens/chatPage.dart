@@ -21,6 +21,7 @@ class _ChatPageState extends State<ChatPage> {
   bool showSendButton = false;
   FocusNode focus = FocusNode();
   TextEditingController _controller = TextEditingController();
+  IO.Socket? socket;
 
   @override
   void initState() {
@@ -44,16 +45,20 @@ class _ChatPageState extends State<ChatPage> {
     );
     socket.connect();
     socket.onConnect((data) => print('I  am working')); */
-    IO.Socket socket = IO.io(
+    socket = IO.io(
         'http://localhost:3000',
         IO.OptionBuilder()
             .setTransports(['websocket']) // for Flutter or Dart VM
             .disableAutoConnect() // disable auto-connection
             .build());
-    socket.connect();
-    socket.emit("/test", "Hello World");
-    socket.onConnect((data) => print('I  am working'));
-    print(socket.connected);
+    socket!.connect();
+    socket!.emit("/test", "Raph");
+    socket!.onConnect((data) => print('I  am working'));
+    print(socket!.connected);
+  }
+
+  sendMessage(String message) {
+    socket!.emit("/message", {'message': message, 'To': widget.chatModel.name});
   }
 
   Widget emojiSelector() {
@@ -304,7 +309,13 @@ class _ChatPageState extends State<ChatPage> {
                                                       icon: Icon(Icons
                                                           .attach_file_outlined)),
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        if (showSendButton) {
+                                                          sendMessage(
+                                                              _controller.text);
+                                                          _controller.clear();
+                                                        }
+                                                      },
                                                       icon: Icon(showSendButton
                                                           ? Icons.send
                                                           : Icons
