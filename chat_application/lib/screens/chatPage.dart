@@ -246,6 +246,11 @@ class _ChatPageState extends State<ChatPage> {
                         children: [
                           MessageBubble(
                             message: widget.chatModel.message,
+                            type: 1,
+                          ),
+                          MessageBubble(
+                            message: widget.chatModel.message,
+                            type: 2,
                           )
                         ],
                       ),
