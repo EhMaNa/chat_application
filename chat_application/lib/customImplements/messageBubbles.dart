@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MessageBubble extends StatefulWidget {
-  MessageBubble({Key? key, required this.message}) : super(key: key);
+  MessageBubble({Key? key, required this.message, required this.type})
+      : super(key: key);
 
   String message;
+  int type;
 
   @override
   _MessageBubbleState createState() => _MessageBubbleState();
