@@ -17,7 +17,9 @@ class _MessageBubbleState extends State<MessageBubble> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: widget.type == 1
+            ? CrossAxisAlignment.end
+            : CrossAxisAlignment.start,
         children: [
           Material(
             elevation: 5,
