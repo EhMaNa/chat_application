@@ -72,9 +72,7 @@ class _ChatPageState extends State<ChatPage> {
             _controller.text = _controller.text + emoji.emoji;
           });
         },
-        config: Config(
-          columns: 5,
-        ),
+        config: Config(indicatorColor: Colors.grey),
       ),
     );
   }
@@ -333,12 +331,14 @@ class _ChatPageState extends State<ChatPage> {
                                             hintStyle: Theme.of(context)
                                                 .textTheme
                                                 .labelLarge!
-                                                .copyWith(fontSize: 17)),
+                                                .copyWith(fontSize: 16)),
                                       )),
                                 ),
                               ],
                             ),
-                            showEmoji ? emojiSelector() : Container(),
+                            showEmoji
+                                ? Flexible(child: emojiSelector())
+                                : Container(),
                           ],
                         ),
                       )
