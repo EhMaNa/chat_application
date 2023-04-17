@@ -283,16 +283,21 @@ class _ChatPageState extends State<ChatPage> {
                                           });
                                         },
                                         decoration: InputDecoration(
-                                            prefixIcon: IconButton(
-                                                onPressed: () {
-                                                  focus.unfocus();
-                                                  focus.canRequestFocus = false;
-                                                  setState(() {
-                                                    showEmoji = !showEmoji;
-                                                  });
-                                                },
-                                                icon: Icon(Icons
-                                                    .emoji_emotions_outlined)),
+                                            border: InputBorder.none,
+                                            prefixIcon: Align(
+                                              alignment: Alignment.bottomCenter,
+                                              child: IconButton(
+                                                  onPressed: () {
+                                                    focus.unfocus();
+                                                    focus.canRequestFocus =
+                                                        false;
+                                                    setState(() {
+                                                      showEmoji = !showEmoji;
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons
+                                                      .emoji_emotions_outlined)),
+                                            ),
                                             suffixIcon: Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
